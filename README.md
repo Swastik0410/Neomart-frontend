@@ -1,16 +1,81 @@
-# React + Vite
+# 🛍️ NeoMart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NeoMart is a modern, minimal e-commerce frontend built with **React + Vite**, featuring **dark mode**, **search and sorting**, **cart management with context**, and **responsive design**.
 
-Currently, two official plugins are available:
+---
+*******
+LIVE LINK OF THE WEBSITE : https://neomart-swastikroy0410.netlify.app/
+*******
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 How to Run the Project
 
-## React Compiler
+### 1️⃣ Clone the repository
+...bash
+git clone https://github.com/Swastik0410/Neomart-frontend.git
+cd neomart
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2️⃣ Install dependencies
+npm install
 
-## Expanding the ESLint configuration
+3️⃣ Start the development server
+npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4️⃣ Open in browser
+
+Visit the URL shown in the terminal, usually:
+
+http://localhost:5173/
+
+🧩 Architecture Overview
+
+NeoMart follows a modular React architecture for clarity and scalability:
+
+src/
+ ├── api/                # Axios API calls (fetchProducts, fetchProductById)
+ ├── components/         # Reusable UI components
+ │    ├── Header.jsx
+ │    ├── ProductCard.jsx
+ │    ├── ProductList.jsx
+ │    ├── SearchSortBar.jsx
+ │    └── SkeletonCard.jsx
+ ├── contexts/           # Context APIs
+ │    ├── CartContext.jsx
+ │    └── ThemeContext.jsx
+ ├── pages/              # Route pages
+ │    ├── Home.jsx
+ │    └── ProductDetails.jsx
+ ├── assets/             # Images and logos
+ ├── App.jsx             # Main routing setup
+ ├── main.jsx            # Entry file
+
+🧠 Key Decisions & Features
+
+Vite + React: Fast dev build and modern tooling.
+Tailwind CSS: Rapid, consistent styling and dark mode support.
+Context API for global state management:
+ThemeContext handles dark/light mode.
+CartContext handles cart operations (add, remove, clear).
+Axios-based API with reusable functions.
+Responsive design for both desktop and mobile.
+Loading states using skeleton cards and animated spinners.
+Dark mode inspired by Google/ChatGPT dark color palette.
+
+⚙️ Known Issues / Trade-offs
+
+❗ Cart persistence is in-memory only (resets on page reload).
+→ Could be enhanced with localStorage or backend support.
+
+🧾 Fake Store API used for demo purposes — limited real data.
+
+💅 Minimal backend integration — focuses on frontend architecture.
+
+⚡ Infinite scroll may re-trigger occasionally on very short viewports.
+
+🌐 Live Demo
+👉 Live Demo – https://neomart-swastikroy0410.netlify.app/
+
+🧑‍💻 Author
+
+SWASTIK ROY
+swastik0410@gmail.com
+
