@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { fetchProductById } from "../api";
 import { CartContext } from "../contexts/CartContext";
 import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -11,6 +12,7 @@ export default function ProductDetails() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [alert, setAlert] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function load() {
@@ -31,6 +33,10 @@ export default function ProductDetails() {
     addToCart(product);
     setAlert(`${product.title} added to cart!`);
     setTimeout(() => setAlert(""), 2000);
+  };
+
+  const goToCart = () => {
+    navigate("/cart"); 
   };
 
 
@@ -102,6 +108,13 @@ export default function ProductDetails() {
               className="px-5 py-2 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer text-white rounded-lg transition-all duration-200 shadow-md"
             >
               Add to Cart
+            </button>
+
+             <button
+              onClick={goToCart}
+              className="px-5 py-2 ml-3 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer text-white rounded-lg transition-all duration-200 shadow-md"
+            >
+              Go to Cart
             </button>
           </div>
         </div>
