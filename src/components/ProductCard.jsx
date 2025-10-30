@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
       className="group relative border rounded-2xl p-4 bg-white dark:bg-[#1e1f20] border-gray-200 dark:border-gray-700 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
     >
       {/* Image */}
-      <div className="w-full h-48 flex justify-center items-center mb-3 overflow-hidden rounded-lg bg-gray-50 dark:bg-gray-900">
+      <div className="w-full h-48 flex justify-center items-center mb-3 overflow-hidden rounded-lg bg-gray-50 dark:bg-gray-500">
         <img
           src={product.image}
           alt={product.title}

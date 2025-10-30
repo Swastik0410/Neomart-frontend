@@ -66,9 +66,18 @@ function CartPage() {
             <div className="mt-6 flex justify-end">
               <button
                 onClick={clearCart}
-                className="px-5 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md transition-all"
+                className="px-5 py-2 bg-red-600 hover:cursor-pointer hover:bg-red-700 text-white rounded-lg shadow-md transition-all"
               >
                 Clear Cart
+              </button>
+            </div>
+
+            <div className="mt-6 flex justify-end">
+              <button
+                
+                className="px-5 py-2 bg-emerald-600 hover:cursor-pointer hover:bg-emerald-900 text-white rounded-lg shadow-md transition-all"
+              >
+                Check Out
               </button>
             </div>
           </>
