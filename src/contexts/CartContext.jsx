@@ -38,9 +38,11 @@ export function CartProvider({ children }) {
 
   const clearCart = () => setCart([]);
 
+  const checkout=()=>alert("Functionality to be added")
+
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart }}
+      value={{ cart, addToCart, removeFromCart, clearCart,checkout }}
     >
       {children}
     </CartContext.Provider>

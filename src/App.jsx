@@ -6,7 +6,7 @@ import ProductDetails from "./pages/ProductDetails";
 import { CartContext } from "./contexts/CartContext";
 
 function CartPage() {
-  const { cart, removeFromCart, clearCart } = useContext(CartContext);
+  const { cart, removeFromCart, clearCart , checkout} = useContext(CartContext);
 
   const totalItems = cart.reduce((a, b) => a + b.qty, 0);
   const totalPrice = cart.reduce((a, b) => a + b.price * b.qty, 0).toFixed(2);
@@ -74,10 +74,10 @@ function CartPage() {
 
             <div className="mt-6 flex justify-end">
               <button
-                
+                onClick={checkout}
                 className="px-5 py-2 bg-emerald-600 hover:cursor-pointer hover:bg-emerald-900 text-white rounded-lg shadow-md transition-all"
               >
-                Check Out
+               Proceed to Check Out
               </button>
             </div>
           </>
